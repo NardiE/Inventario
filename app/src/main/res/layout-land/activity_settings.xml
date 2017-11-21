@@ -1,0 +1,169 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    tools:context="com.edoardo.Inventario.attivita.Impostazioni">
+    <ScrollView android:id="@+id/ScrollViewID"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="40">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                    android:textStyle="bold"
+                    android:text="Destinatario email:"
+                    android:textColor="#000000"/>
+
+                <EditText
+                    android:id="@+id/emaildest"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:hint="info@example.com"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                    android:textStyle="bold"
+                    android:text="Oggetto email:"
+                    android:textColor="#000000"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                    android:textStyle="bold"
+                    android:id="@+id/emailsubj"
+                    android:hint="Signorini: "
+                    android:textColor="#000000"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                    android:textStyle="bold"
+                    android:text="Nome file carico:"
+                    android:textColor="#000000"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nomecarico"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                    android:textStyle="bold"
+                    android:hint="carico"
+                    android:textColor="#000000"/>
+            </LinearLayout><LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                android:textStyle="bold"
+                android:text="Nome file scarico:"
+                android:textColor="#000000"/>
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:id="@+id/nomescarico"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                android:textStyle="bold"
+                android:hint="scarico"
+                android:textColor="#000000"/>
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                    android:textStyle="bold"
+                    android:text="Path salvataggio file"
+                    android:textColor="#000000"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/filepath"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+                    android:textStyle="bold"
+                    android:hint="scanner"
+                    android:textColor="#000000"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:gravity="bottom">
+        <Button
+            android:text="SALVA"
+            android:onClick="salvaConfigurazioni"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

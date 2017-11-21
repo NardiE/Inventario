@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.edoardo.Inventario">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <application
+        android:name="com.orm.SugarApp"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        tools:replace="android:icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.edoardo.Inventario.attivita.AggiungiEl" />
+        <activity android:name="com.edoardo.Inventario.attivita.ZxingScannerActivity" />
+        <activity android:name="com.edoardo.Inventario.attivita.ZbarScannerActivity" />
+        <activity android:name="com.edoardo.Inventario.attivita.Impostazioni" />
+        <activity android:name="com.edoardo.Inventario.attivita.ListaEl" />
+        <activity android:name="com.edoardo.Inventario.attivita.SignScanner">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.edoardo.Inventario.attivita.ModifyEl"></activity>
+        <meta-data
+            android:name="DATABASE"
+            android:value="scanner.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="2" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.edoardo" />
+    </application>
+
+</manifest>
