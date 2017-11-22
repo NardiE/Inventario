@@ -5,40 +5,88 @@
     android:background="#ffffff"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:background="#ffffff"
+        android:background="@color/mycolor"
         android:layout_height="0dp"
         android:layout_weight="2"
+        android:onClick="inserisciCarico"
         android:orientation="horizontal">
-
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:onClick="inserisciCarico"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:text="Inserisci qui i tuoi carichi"
+                android:textColor="#ffffff" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
         <Button
             android:id="@+id/button2"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
+            android:onClick="inserisciCarico"
             android:layout_height="match_parent"
-            android:layout_weight="10"
-            android:background="@drawable/carico"
-            android:onClick="inserisciCarico" />
+            android:layout_weight="1"
+            android:background="@drawable/carico"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:background="#ffffff"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
+        android:onClick="inserisciScarico"
         android:orientation="horizontal">
-
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:onClick="inserisciScarico"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:text="Inserisci qui i tuoi scarichi"
+                android:textColor="@color/mycolor" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
         <Button
+            android:paddingBottom="10dp"
             android:id="@+id/button"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
+            android:onClick="inserisciScarico"
             android:layout_height="match_parent"
-            android:layout_weight="10"
-            android:background="@drawable/scarico"
-            android:onClick="inserisciScarico" />
+            android:layout_weight="1"
+            android:background="@drawable/scarico"/>
 
     </LinearLayout>
     <LinearLayout

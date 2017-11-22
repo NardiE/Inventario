@@ -48,10 +48,6 @@ public class ListaEl extends AppCompatActivity {
         getSupportActionBar().setTitle("Home");
         context = ListaEl.this;
 
-        Animation shake = AnimationUtils.loadAnimation(this.getApplicationContext(), R.anim.shake);
-        (findViewById(R.id.addb)).startAnimation(shake);
-        (findViewById(R.id.addb1)).startAnimation(shake);
-        (findViewById(R.id.addb2)).startAnimation(shake);
 
         listView=(ListView)findViewById(R.id.listEL);
         dataModels = new ArrayList<>();

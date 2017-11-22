@@ -56,8 +56,6 @@ public class ModifyEl extends AppCompatActivity {
 
 
         Animation shake = AnimationUtils.loadAnimation(this.getApplicationContext(), R.anim.shake);
-//        (findViewById(R.id.layoutbd)).startAnimation(shake);
-//        (findViewById(R.id.layoutqt)).startAnimation(shake);
         (findViewById(R.id.layoutsc)).startAnimation(shake);
 
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.WHITE));

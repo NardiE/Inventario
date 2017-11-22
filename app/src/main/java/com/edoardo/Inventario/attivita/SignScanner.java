@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.edoardo.Inventario.R;
@@ -53,22 +55,18 @@ public class SignScanner extends AppCompatActivity {
 
         // controllo che le impostazioni siano inserite
         SharedPreferences sharedpreferences = getSharedPreferences(Impostazioni.preferences, Context.MODE_PRIVATE);
-        String scarico = sharedpreferences.getString(TipiConfigurazione.nomefilescarico,"scarico");
-        String carico = sharedpreferences.getString(TipiConfigurazione.nomefilecarico,"carico");
-        String email = sharedpreferences.getString(TipiConfigurazione.email,"edoardo@signorini.it");
-        String subj = sharedpreferences.getString(TipiConfigurazione.oggetto,"Signorini: ");
-        String savepath = sharedpreferences.getString(TipiConfigurazione.savepath,"scanner");
-
-        if(email.equals("") || subj.equals("") || carico.equals("") || scarico.equals("") || savepath.equals("")){
-
+        String email = sharedpreferences.getString(TipiConfigurazione.email,"errore");
+        if(email.equals("errore")){
+            Intent i = new Intent(this,Impostazioni.class);
+            startActivity(i);
         }
 
+        Typeface font = Typeface.createFromAsset(getAssets(), "font/Bauhaus.ttf");
+        TextView qt = (TextView) findViewById(R.id.textView1);
+        TextView bd = (TextView) findViewById(R.id.textView);
 
-        Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
-        findViewById(R.id.button).startAnimation(shake);
-        findViewById(R.id.button2).startAnimation(shake);
-        findViewById(R.id.button3).startAnimation(shake);
-        findViewById(R.id.button4).startAnimation(shake);
+        bd.setTypeface(font);
+        qt.setTypeface(font);
 
 
         // salvo il contesto
@@ -83,48 +81,6 @@ public class SignScanner extends AppCompatActivity {
         //cleanUp();
 
         //insertSample();
-
-        Button button3= (Button) findViewById(R.id.button3);
-        button3.setOnTouchListener(new OnSwipeTouchListener(SignScanner.this) {
-            public void onSwipeTop() {
-                Toast.makeText(SignScanner.this, "top", Toast.LENGTH_SHORT).show();
-            }
-            public void onSwipeRight() {
-                // aprirò una lista elementi con OP = Scarico
-                Intent i = new Intent(context, ListaEl.class);
-                i.putExtra(TipoExtra.tipoop,TipoOp.OP_CARICO);
-                startActivity(i);
-//                overridePendingTransition( R.anim.lefttoright, R.anim.stable );
-            }
-            public void onSwipeLeft() {
-                // aprirò una lista elementi con OP = Scarico
-                Intent i = new Intent(context, ListaEl.class);
-                i.putExtra(TipoExtra.tipoop, TipoOp.OP_SCARICO);
-                startActivity(i);
-//                overridePendingTransition( R.anim.righttoleft, R.anim.stable );
-            }
-        });
-
-        Button button4= (Button) findViewById(R.id.button4);
-        button4.setOnTouchListener(new OnSwipeTouchListener(SignScanner.this) {
-            public void onSwipeTop() {
-                Toast.makeText(SignScanner.this, "top", Toast.LENGTH_SHORT).show();
-            }
-            public void onSwipeRight() {
-                // aprirò una lista elementi con OP = Scarico
-                Intent i = new Intent(context, ListaEl.class);
-                i.putExtra(TipoExtra.tipoop,TipoOp.OP_CARICO);
-                startActivity(i);
-                overridePendingTransition( R.anim.lefttoright, R.anim.stable );
-            }
-            public void onSwipeLeft() {
-                // aprirò una lista elementi con OP = Scarico
-                Intent i = new Intent(context, ListaEl.class);
-                i.putExtra(TipoExtra.tipoop, TipoOp.OP_SCARICO);
-                startActivity(i);
-                overridePendingTransition( R.anim.righttoleft, R.anim.stable );
-            }
-        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
